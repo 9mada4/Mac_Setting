@@ -71,6 +71,7 @@ Chrome Remoto Desktop(CRD)でWindows10をMacから操作するときのキーボ
 
 
 ---
+
 # Hammerspoon　" ウィンドウ操作 "
 init.luaを以下のディレクトリにコピーすると，コマンドが使えるようになる．
 
@@ -99,8 +100,22 @@ init.luaを以下のディレクトリにコピーすると，コマンドが使
 
 </details>
 
+---
 
 - Reload Configをしないと反映されない
 - ステージマネージャーと併用すると良い
 - デスクトップは一つのモニターで3つまでがよい
 - `トラックパッド > フルスクリーンアプリケーションをスワイプ　> 4本指で左右にスワイプ`をONにして上下左右にスライドすると感動する
+
+---
+
+# Touch IDが反応しない
+
+解決方法: Macに触れる
+仮説: 静電容量方式のセンサーが乾燥した環境の静電気などで反応しずらくなっていた
+- 実際に10月末にいきなり反応しなくなり，これによって解消された．
+
+日本語記事
+https://zenn.dev/monoduki_tech/articles/6a4f40af85bf8a
+Apple Comunity元記事
+https://discussions.apple.com/thread/255054380?sortBy=rank
