@@ -9,7 +9,24 @@ Macでのインストールは基本
 </details>
 
 ---
-# CRDのキーボード設定
+## Word for Macの設定
+1. `Normal.dotm`をダウンロード
+2. Finderで command⌘ + shift + g
+3. ここに移動
+   ```
+   cd ~/Library/Group\ Containers/UBF8T346G9.Office/User\ Content.localized/Templates/
+   ```
+   または
+   ```
+   ~/Library/Group\ Containers/UBF8T346G9.Office/User\ Content.localized/Templates.localized/
+   ```
+4. 既存のNormal.dotmを置き換え
+5. Word再起動
+
+⚠️デフォルトに戻す場合はNormal.dotmを削除することで，Word起動時に再生成される．
+
+---
+## CRDのキーボード設定
 2025-07-16<br>
 Chrome Remoto Desktop(CRD)でWindows10をMacから操作するときのキーボード設定．
 1. Windowsの設定(キーの割当設定)<br>
@@ -25,39 +42,6 @@ Chrome Remoto Desktop(CRD)でWindows10をMacから操作するときのキーボ
     - CRDにキーが送られる前にMac側で変換キーとして消費されるため．
     - アプリのID↓は環境ごとに違うはずなので，KarabineerのEventViewerで調べる必要あり．
       "com.google.Chrome.app.cmkncekebbebpfilplodngbpllndjkfo"
-```
-{
-    "description": "Eisu→F13, Kana→F14 (only CRD window)",
-    "manipulators": [
-        {
-            "conditions": [
-                {
-                    "bundle_identifiers": [
-                        "com.google.Chrome.app.cmkncekebbebpfilplodngbpllndjkfo"
-                    ],
-                    "type": "frontmost_application_if"
-                }
-            ],
-            "from": { "key_code": "japanese_eisuu" },
-            "to": [{ "key_code": "f13" }],
-            "type": "basic"
-        },
-        {
-            "conditions": [
-                {
-                    "bundle_identifiers": [
-                        "com.google.Chrome.app.cmkncekebbebpfilplodngbpllndjkfo"
-                    ],
-                    "type": "frontmost_application_if"
-                }
-            ],
-            "from": { "key_code": "japanese_kana" },
-            "to": [{ "key_code": "f14" }],
-            "type": "basic"
-        }
-    ]
-}
-```
 
 3. CRDの設定(Mac→Windowsでの変換設定)<br>
    CRDのサイドパネル(初期設定は右) > キーマッピングの設定
@@ -72,7 +56,7 @@ Chrome Remoto Desktop(CRD)でWindows10をMacから操作するときのキーボ
 
 ---
 
-# Hammerspoon　" ウィンドウ操作 "
+## Hammerspoon　" ウィンドウ操作 "
 init.luaを以下のディレクトリにコピーすると，コマンドが使えるようになる．
 
 `/Users/ユーザー名/.hammerspoon/init.lua`
@@ -97,10 +81,10 @@ init.luaを以下のディレクトリにコピーすると，コマンドが使
     - `　■□　□●　1枚目ウィンドウ ■　 1/2左寄せ `
     - `　●□　□■　1枚目ウィンドウ ■　 1/2右寄せ `
     - `　■■□　□□●　1枚目ウィンドウ ■　 2/3左寄せ `
+ 
+    ---
 
 </details>
-
----
 
 - Reload Configをしないと反映されない
 - ステージマネージャーと併用すると良い
@@ -109,7 +93,7 @@ init.luaを以下のディレクトリにコピーすると，コマンドが使
 
 ---
 
-# Touch IDが反応しない
+## Touch IDが反応しない
 
 解決方法: Macに触れる
 仮説: 静電容量方式のセンサーが乾燥した環境の静電気などで反応しずらくなっていた
